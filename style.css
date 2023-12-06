@@ -77,8 +77,9 @@ body {
     font-size: 15px;
     color: #ffffff;
     text-align: center;
+    line-height: 80%;
 }
-#InfoText h4{
+#InfoText h1{
     cursor: pointer;
 }
 

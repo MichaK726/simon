@@ -19,7 +19,11 @@ let wrong = new Audio('wrong.wav');
 
 let isGameOver = false;
 
-window.addEventListener('load', Start);
+window.addEventListener('load', BeforeStart);
+
+function BeforeStart() {
+    document.getElementById("highScore").innerHTML = "Highscore: " + cookieHighScore;
+}
 
 function Start() {
     document.getElementById("highScore").innerHTML = "Highscore: " + cookieHighScore;
