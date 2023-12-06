@@ -103,4 +103,9 @@ body {
     font-size: 50px;
     background: none;
     border: none;
+    transition: .25s ease;
+}
+
+#GameOver button:hover {
+    transform: scale(1.5);
 }
