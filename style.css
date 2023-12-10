@@ -18,7 +18,7 @@ body {
     grid-row-gap: 2%;
     grid-column-gap: 1%;
     grid-template-columns: 50vw 50vw;
-    grid-template-rows: 10vh 40vh 40vh;
+    grid-template-rows: 20vh 40vh 40vh;
 }
 
 #red,
@@ -77,7 +77,7 @@ body {
     font-size: 15px;
     color: #ffffff;
     text-align: center;
-    line-height: 80%;
+    line-height: 115%;
 }
 #InfoText h1{
     cursor: pointer;
@@ -99,7 +99,16 @@ body {
     font-size: 75px;
 }
 
-#GameOver button {
+#GameOver button, #Start {
+    cursor: pointer;
+    font-size: 50px;
+    background: none;
+    border: none;
+    transition: .25s ease;
+}
+
+#Start{
+    color: #ffffff;
     cursor: pointer;
     font-size: 50px;
     background: none;

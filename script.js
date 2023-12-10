@@ -18,6 +18,7 @@ let blue = new Audio('blue.wav');
 let wrong = new Audio('wrong.wav');
 
 let isGameOver = false;
+let AreColorsBlinking = true;
 
 window.addEventListener('load', BeforeStart);
 
@@ -27,6 +28,9 @@ function BeforeStart() {
 
 function Start() {
     document.getElementById("highScore").innerHTML = "Highscore: " + cookieHighScore;
+    ColorArray = []
+    UserInputArray = []
+    score = 0;
     RandomColor()
     BlinkColors()
     window.requestAnimationFrame(Main);
@@ -77,23 +81,31 @@ function BlinkBlue() {
 }
 
 function PressedGreen() {
+if (!AreColorsBlinking) {
     BlinkGreen()
     UserInputArray.push("green")
 }
+}
 
 function PressedRed() {
+if (!AreColorsBlinking) {
     BlinkRed()
     UserInputArray.push("red")
 }
+}
 
 function PressedYellow() {
+if (!AreColorsBlinking) {
     BlinkYellow()
     UserInputArray.push("yellow")
 }
+}
 
 function PressedBlue() {
+if (!AreColorsBlinking) {
     BlinkBlue()
     UserInputArray.push("blue")
+}
 }
 
 function RandomColor() {
@@ -102,32 +114,38 @@ function RandomColor() {
 }
 
 function BlinkColors() {
-    AreColorsBlinking = true;
     let forLoopCycleNumber = 1;
     for (let i = 0; i < ColorArray.length; i++) {
         if (ColorArray[i] == "green") {
             setTimeout(function () {
+                AreColorsBlinking = true;
                 BlinkGreen()
             }, forLoopCycleNumber * 500);
         }
         if (ColorArray[i] == "red") {
             setTimeout(function () {
+                AreColorsBlinking = true;
                 BlinkRed()
             }, forLoopCycleNumber * 500);
         }
         if (ColorArray[i] == "yellow") {
             setTimeout(function () {
+                AreColorsBlinking = true;
                 BlinkYellow()
             }, forLoopCycleNumber * 500);
         }
         if (ColorArray[i] == "blue") {
             setTimeout(function () {
+                AreColorsBlinking = true;
                 BlinkBlue()
             }, forLoopCycleNumber * 500);
         }
         forLoopCycleNumber++;
     }
-    AreColorsBlinking = false;
+    setTimeout(function () {
+        AreColorsBlinking = false
+    }, forLoopCycleNumber * 500);
+
 }
 
 function CheckAnswer() {
